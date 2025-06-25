@@ -1,9 +1,9 @@
 import { DioAccount } from "./DioAccount";
 
 export class VipAccount extends DioAccount {  
-  deposit = (value: number): number | undefined => {
+  deposit = (value: number): void => {
     if (this.validateStatus()) {
-      return this.balance += value + 10
+      this.setBalance(this.getBalance() + value + 10)
     }
   }
 }
